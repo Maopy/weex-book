@@ -86,3 +86,42 @@ brew tap caskroom/versions
 brew cask install java8
 ```
 
+### 第二个报错
+
+```bash
+xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
+[✔︎] Compile JSBundle done
+? Select one of the device equuleus
+[✔︎] Start hotreload server done
+[✔︎] Set native config done
+[✔︎] Copy JS source done
+[✔︎] Watch JS source done
+⠇ Error: Command failed: ./gradlew clean assembleDebug
+isLibProject: false, isAppProject: true
+weex_plugin: []
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring project ':app'.
+> You have not accepted the license agreements of the following SDK components:
+  [Android SDK Platform 26, Android SDK Build-Tools 26].
+  Before building your project, you need to accept the license agreements and complete the installation of the missing components using the Android Studio SDK Manager.
+  Alternatively, to learn how to transfer the license agreements from one workstation to another, go to http://d.android.com/r/studio-ui/export-licenses.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+    at ChildProcess.exithandler (child_process.js:297:12)
+    at ChildProcess.emit (events.js:197:13)
+    at maybeClose (internal/child_process.js:984:16)
+    at Socket.stream.socket.on (internal/child_process.js:401:11)
+    at Socket.emit (events.js:197:13)
+    at Pipe._handle.close (net.js:611:12)
+⠦ ^C%
+```
+
+如报错内容所说，我们缺少了 Android SDK Platform 26 和 Android SDK Build-Tools 26（这东西具体是啥还有待学习）。
+
+打开 Android Studio，打开 path/to/platforms/andriod 项目目录，build 工具会自动提示安装缺失的内容。
+
