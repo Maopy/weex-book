@@ -125,3 +125,45 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
 
 打开 Android Studio，打开 path/to/platforms/andriod 项目目录，build 工具会自动提示安装缺失的内容。
 
+### 一个小问题
+
+```bash
+xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
+[✔︎] Compile JSBundle done
+? Select one of the device equuleus
+[✔︎] Start hotreload server done
+[✔︎] Set native config done
+[✔︎] Copy JS source done
+[✔︎] Watch JS source done
+[✔︎] Build APP done
+⠧ Lanuching APP - this may take a few secondsError: Command failed: /Users/maopy/Library/Android/sdk/platform-tools/adb -s c8ef737f install -r /Users/maopy/www/test/awesome-project/platforms/android/app/build/outputs/apk/weex-app.apk
+adb: failed to install /Users/maopy/www/test/awesome-project/platforms/android/app/build/outputs/apk/weex-app.apk: Failure [INSTALL_FAILED_USER_RESTRICTED: Install canceled by user]
+
+    at ChildProcess.exithandler (child_process.js:297:12)
+    at ChildProcess.emit (events.js:197:13)
+    at maybeClose (internal/child_process.js:984:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:265:5)
+⠋ Lanuching APP - this may take a few seconds^C%
+```
+
+错误原因是没有成功在手机上安装 Weex App，在“开发者选项”中，打开“USB 安装”，即可解决。
+
+### 成功了
+
+```bash
+xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
+[✔︎] Compile JSBundle done
+? Select one of the device equuleus
+[✔︎] Start hotreload server done
+[✔︎] Set native config done
+[✔︎] Copy JS source done
+[✔︎] Watch JS source done
+[✔︎] Build APP done
+[✔︎] Launch APP done
+Hotreload server is actived, enjoy your develop
+Type Ctrl+C to exist
+^C%
+```
+
+
+
