@@ -2,7 +2,9 @@
 
 ## 初始化项目
 
-默认情况下 `weex create` 命令并不初始化 iOS 和 Android 项目，你可以通过执行 `weex platform add` 来添加特定平台的项目。
+首先，根据[官方文档](https://weex.apache.org/zh/guide/develop/setup-develop-environment.html)上的步骤安装脚手架等工具：
+
+默认情况下 `weex create` 命令并不初始化 iOS 和 Android 项目，可以通过执行 `weex platform add` 来添加特定平台的项目。
 
 ```bash
 weex platform add android
@@ -16,7 +18,7 @@ Oracle 官网下载：
 
 {% embed url="https://www.oracle.com/technetwork/java/javase/downloads/index.html" %}
 
-或
+或，通过 homebrew 安装（推荐）：
 
 ```bash
 brew cask install java
@@ -146,7 +148,9 @@ adb: failed to install /Users/maopy/www/test/awesome-project/platforms/android/a
 ⠋ Lanuching APP - this may take a few seconds^C%
 ```
 
-错误原因是没有成功在手机上安装 Weex App，在“开发者选项”中，打开“USB 安装”，即可解决。
+报错原因：没有成功在手机上安装 Weex App。
+
+在“开发者选项”中，打开“USB 安装”，即可解决。
 
 ### 成功了
 
@@ -165,5 +169,5 @@ Type Ctrl+C to exist
 ^C%
 ```
 
-
+Have fun!
 
